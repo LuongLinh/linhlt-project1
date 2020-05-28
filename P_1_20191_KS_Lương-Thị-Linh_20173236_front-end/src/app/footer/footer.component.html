@@ -1,0 +1,91 @@
+<footer class="footer" style="background-color: #f5f5f5; color: #333">
+  <div class="footer-custom">
+    <div class="container-fluid" style="margin-right: 0px;">
+      <div class="row">
+        <div class="col-md-3 footer-item">
+          <div class="title">
+            <h6>Về BIBI</h6>
+            <hr>
+          </div>
+          <div class="content" *ngFor="let vebibi of vebibis">
+
+              <li>
+                <a href="#">{{ vebibi }}</a>
+              </li>
+
+          </div>
+        </div>
+
+        <div class="col-md-3 footer-item">
+          <div class="title">
+            <h6>CHÍNH SÁCH</h6>
+            <hr>
+          </div>
+          <div class="content" *ngFor="let cs of chinhsachs">
+
+              <li><a href="#">{{ cs }}</a></li>
+
+          </div>
+        </div>
+
+        <div class="col-md-3 footer-item">
+          <div class="title">
+            <h6>HƯỚNG DẪN</h6>
+            <hr>
+          </div>
+          <div class="content" *ngFor="let hd of hds">
+            <li><a href="#">{{ hd }}</a></li>
+          </div>
+        </div>
+
+        <div class="col-md-3 footer-item">
+          <div class="title">
+            <h6>KẾT NỐI</h6>
+            <hr>
+          </div>
+          <div class="content">
+            <div class="item">
+              <div class="icon">
+                <i class="fas fa-map-marker-alt"></i>
+                Số xx, Tạ Quang Bửu, Hai Bà Trưng, Hà Nội
+              </div>
+            </div>
+            <div class="item">
+              <div class="icon">
+                <i class="fab fa-facebook"></i>
+                Facebook
+              </div>
+            </div>
+            <div class="item">
+              <div class="icon">
+                <i class="fab fa-instagram"></i>
+                Instagram
+              </div>
+            </div>
+            <div class="item">
+              <div class="icon">
+                <i class="fas fa-mobile-alt"></i>
+                0377320997
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+          <div class="footer-copyright-end">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <p>&copy; 2019 | Made by Linh</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="card">
+    <div class="container-fliud">
+      <div class="wrapper row" *ngFor="let product of products">
+        <div class="preview col-md-6 col-sm-12 col-12">
+          <div class="preview-pic tab-content">
+            <div class="tab-pane active" id="pic-1"><img src="{{product.image1}}" alt="Ảnh">
+            </div>
+            <div class="tab-pane" id="pic-2"><img src="{{product.image2}}" alt="Ảnh"></div>
+            <div class="tab-pane" id="pic-3"><img src="{{product.image3}}" alt=""></div>
+          </div>
+        </div>
+        <div class="details col-md-6 col-sm-12 col-12">
+          <h3 class="product-title">{{product.product_name}}</h3>
+          <h4 class="price">Giá bán: {{product.product_price}} VNĐ</h4>
+
+          <ul class="preview-thumbnail nav nav-tabs">
+            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{product.image1}}" alt="ảnh"></a>
+            </li>
+            <li><a data-target="#pic-2" data-toggle="tab"><img src="{{product.image2}}" alt="ảnh"></a>
+            </li>
+            <li><a data-target="#pic-3" data-toggle="tab"><img src="{{product.image3}}" alt="ảnh"></a>
+            </li>
+          </ul>
+          <hr>
+          <p class="vote"><strong>91%</strong> of người mua hài lòng với sản phẩm này <strong>(87 bình chọn)</strong>
+          </p>
+          <h5 class="sizes">Sizes
+            <span class="size" data-toggle="tooltip" title="small">100</span>
+            <span class="size" data-toggle="tooltip" title="medium">110</span>
+            <span class="size" data-toggle="tooltip" title="large">120</span>
+            <span class="size" data-toggle="tooltip" title="xtra large">130</span>
+          </h5>
+          <h6 class="colors">Màu:
+            <span class="color be" title="màu be"></span>
+            <span class="color yellow" title="màu vàng"></span>
+          </h6>
+          <label class="card-text">
+
+            <strong >Số lượng </strong>
+            <input [(ngModel)]=count type="number" name="count" required min="1" placeholder="1">
+          </label>
+          <p class="card-text"><strong class="price">Tổng: </strong>
+            <label id="subtotal">{{count * product.product_price | currency}} VNĐ</label>
+          </p>
+
+          <h6 class="price">{{product.product_description}}</h6>
+
+          <div class="action">
+            <a href="#" target="_blank">
+              <button class="swatch add-to-cart btn btn-default ml-10" type="button">Mua ngay</button></a>
+            <a href="#" target="_blank">
+              <button class="btn btn-info ml-10" type="button">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i></button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

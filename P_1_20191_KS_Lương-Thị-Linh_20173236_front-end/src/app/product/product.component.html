@@ -1,0 +1,56 @@
+<!--dòng chữ-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <p class="chu">Bộ Sưu Tập</p>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <!--cac SP-->
+    <div *ngFor="let product of products" class="col-md-3 col-sm6 col-12 item">
+      <div class="card card-product"><a [routerLink]="['/product', product.product_id]">
+        <img src="{{product.image1}}" class="card-img-top" alt="ảnh"></a>
+
+        <div class="card-body">
+          <a [routerLink]="['/product', product.product_id]" target="_top">
+            <h6 class="card-title" >{{product.product_name}}</h6>
+          </a>
+          <div class="card-text product-price">
+            <span><a class="btn btn-danger ml-10" href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></span>
+            <span><a [routerLink]="['/product', product.product_id]" class="btn btn-outline-info chitiet ml-10" target="_top">Chi tiết</a></span>
+            <span class="price ml-10">{{product.product_price}}<sub>đ</sub></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--=============hết SP=================-->
+    <!-- phân trang-->
+    <div class="container page">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item cd-top text--replace js-cd-top"><a class="page-link" routerLink="pagination">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-right">
+        <a href="#" class="cd-top text--replace js-cd-top">Back to top</a>
+      </div>
+    </div>
+  </div>
+</div>

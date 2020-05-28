@@ -1,0 +1,56 @@
+<h1 style="text-align: center">Đăng nhập</h1><br>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div [hidden]="submitted" style="width: 400px;">
+      <form [formGroup]="usersaveform" #saveuser (ngSubmit)="saveUser(saveUser)">
+
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" formControlName="user_name" data-toggle="tooltip"
+            data-placement="right" title="Enter User Name">
+          <div class="alert alert-danger" *ngIf="(UserName.touched) && (UserName.invalid)" style="margin-top: 5px;">
+            <span *ngIf="UserName.errors.required">User Name is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Password</label>
+          <input type="password" class="form-control" formControlName="user_password" data-toggle="tooltip"
+            data-placement="right" title="Enter User Password">
+          <div class="alert alert-danger" *ngIf="(UserPassword.touched) && (UserPassword.invalid)"
+            style="margin-top: 5px;">
+            <span *ngIf="UserPassword.errors.required">User Password is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <input type="checkbox">
+            <label for="remember_me" class="inline">Remember me</label>
+            <a class="float-right" routerLink="/rg">Sign Up</a>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Đăng nhập</button>
+
+        <p>UserName: admin; password: admin</p>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div [hidden]="!submitted">
+
+      <h4>Đăng nhập thành công!</h4>
+
+      <button [routerLink]="['/admin']" routerLinkActive="router-link-active" class='btn btn-primary'>Admin</button>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>

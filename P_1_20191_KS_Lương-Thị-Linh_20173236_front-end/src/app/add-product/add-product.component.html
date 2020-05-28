@@ -1,0 +1,87 @@
+<h1 style="text-align: center">Create Product</h1><br>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div [hidden]="submitted" style="width: 400px;">
+      <form [formGroup]="productsaveform" #saveproduct (ngSubmit)="saveProduct(saveProduct)">
+
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input type="text" class="form-control" formControlName="product_name" data-toggle="tooltip"
+            data-placement="right" title="Enter Product Name">
+          <div class="alert alert-danger" *ngIf="(ProductName.touched) && (ProductName.invalid)"
+            style="margin-top: 5px;">
+            <span *ngIf="ProductName.errors.required">Product Name is Required</span>
+            <span *ngIf="ProductName.errors.minlength">
+              MinLength Error
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Product Price</label>
+          <input type="text" class="form-control" formControlName="product_price" data-toggle="tooltip"
+            data-placement="right" title="Enter Product Price">
+          <div class="alert alert-danger" *ngIf="(ProductPrice.touched) && (ProductPrice.invalid)"
+            style="margin-top: 5px;">
+            <span *ngIf="ProductPrice.errors.required">Product Price is Required</span>
+            <span *ngIf="ProductPrice.errors.minlength">
+              MinLength Error
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Type</label>
+          <input type="text" class="form-control" formControlName="category_type" data-toggle="tooltip"
+            data-placement="right" title="Enter Category Type">
+          <div class="alert alert-danger" *ngIf="(CategoryType.touched) && (CategoryType.invalid)"
+            style="margin-top: 5px;">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Product Description</label>
+
+          <textarea type="text" class="form-control" formControlName="product_description" data-toggle="tooltip"
+            data-placement="right" title="Enter Product Description" rows="4" cols="50"></textarea>
+
+          <div class="alert alert-danger" *ngIf="(ProductDescription.touched) && (ProductDescription.invalid)"
+            style="margin-top: 5px;">
+            <span *ngIf="ProductDescription.errors.required">Product Description is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Image1</label>
+          <input type="text" class="form-control" formControlName="image1" data-toggle="tooltip" data-placement="right"
+            title="Enter Image1">
+        </div>
+        <div class="form-group">
+          <label for="name">Image2</label>
+          <input type="text" class="form-control" formControlName="image2" data-toggle="tooltip" data-placement="right"
+            title="Enter Image2">
+        </div>
+
+        <div class="form-group">
+          <label for="name">Image3</label>
+          <input type="text" class="form-control" formControlName="image3" data-toggle="tooltip" data-placement="right"
+            title="Enter Image2">
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div [hidden]="!submitted">
+      <h4>Product Added SuccessFully!</h4>
+      <button (click)="addProductForm()" class='btn btn-primary'>Add More Product</button>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
